@@ -216,6 +216,43 @@ body {
   page-break-after: always;
 }
 .hoja:last-child { page-break-after: auto; }
+.hoja.hasta-3 {
+  grid-template-columns: 1fr;
+  gap: 4mm;
+}
+.hoja.hasta-3 .tarjeta {
+  aspect-ratio: 2.08 / 1;
+  border-radius: 4.8mm;
+  padding: 4.2mm 5.4mm;
+}
+.hoja.hasta-3 .titulo-caps {
+  font-size: 7.4pt;
+  letter-spacing: 1.5px;
+}
+.hoja.hasta-3 .titulo-script {
+  font-size: 18pt;
+}
+.hoja.hasta-3 .ilustracion {
+  width: 15mm;
+  height: 15mm;
+}
+.hoja.hasta-3 .linea-label,
+.hoja.hasta-3 .circulos-label {
+  font-size: 11pt;
+}
+.hoja.hasta-3 .linea-nombre {
+  font-size: 8.8pt;
+  min-height: 4mm;
+}
+.hoja.hasta-3 .circulos-grid {
+  gap: 1.4mm;
+}
+.hoja.hasta-3 .circulo {
+  font-size: 5.2pt;
+}
+.hoja.hasta-3 .circulo.marcado::after {
+  font-size: 7.2pt;
+}
 
 .tarjeta {
   width: 100%;
@@ -636,10 +673,11 @@ function generarTarjetas() {
   hojasDiv.innerHTML = '';
   for (let i = 0; i < nombres.length; i += TARJETAS_POR_HOJA) {
     const grupo = nombres.slice(i, i + TARJETAS_POR_HOJA);
+    const claseHoja = grupo.length <= 3 ? 'hoja hasta-3' : 'hoja';
     const tarjetasHtml = grupo
       .map(n => htmlTarjeta(n, marcas[n] || []))
       .join('');
-    hojasDiv.innerHTML += `<div class="hoja">${tarjetasHtml}</div>`;
+    hojasDiv.innerHTML += `<div class="${claseHoja}">${tarjetasHtml}</div>`;
   }
 
   actualizarStats();
