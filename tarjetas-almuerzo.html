@@ -376,20 +376,106 @@ body {
 }
 
 @media (max-width: 900px) {
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.28) 0%, transparent 34%),
+      radial-gradient(circle at bottom right, rgba(199,93,79,0.12) 0%, transparent 36%),
+      var(--bg);
+  }
+  .pantalla {
+    padding: 22px 12px 34px;
+  }
+  .container {
+    max-width: 680px;
+  }
+  .header {
+    margin-bottom: 18px;
+  }
   .hoja {
     width: 100%;
     min-height: auto;
-    padding: 3mm;
+    padding: 4mm 2mm 6mm;
     grid-template-columns: 1fr;
-    gap: 4mm;
+    gap: 5mm;
+    background: transparent;
+    box-shadow: none;
   }
   .tarjeta {
     width: 100%;
     min-height: 0;
+    border-radius: 18px;
+    padding: 14px 15px;
+    outline-offset: 0;
+    box-shadow: 0 10px 24px rgba(92, 52, 35, 0.14);
   }
-  .stats { grid-template-columns: 1fr 1fr 1fr; }
+  .tarjeta:nth-child(odd) {
+    transform: rotate(-1.2deg);
+  }
+  .tarjeta:nth-child(even) {
+    transform: rotate(0.9deg);
+  }
+  .tarjeta-top {
+    margin-bottom: 10px;
+  }
+  .titulo-caps {
+    font-size: 0.72rem;
+    letter-spacing: 1.3px;
+  }
+  .titulo-script {
+    font-size: 1.6rem;
+    margin-top: 2px;
+  }
+  .linea-alumno {
+    border-radius: 14px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+  .linea-label {
+    font-size: 1.05rem;
+  }
+  .linea-nombre {
+    font-size: 0.92rem;
+    min-height: 20px;
+  }
+  .circulos-label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .circulos-grid {
+    gap: 6px;
+  }
+  .circulo {
+    font-size: 0.56rem;
+  }
+  .panel {
+    border-radius: 24px;
+    padding: 18px 16px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .stat {
+    border-radius: 16px;
+  }
   .stat-num { font-size: 1.6rem; }
   .header h1 { font-size: 2.2rem; }
+  .header p {
+    max-width: 24ch;
+    margin: 6px auto 0;
+  }
+  .controles {
+    gap: 8px;
+  }
+  .btn {
+    padding: 11px 18px;
+    font-size: 0.76rem;
+  }
+  .install-banner {
+    border-radius: 18px;
+    padding: 12px 14px;
+  }
 }
 </style>
 </head>
