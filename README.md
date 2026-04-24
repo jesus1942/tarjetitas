@@ -1,11 +1,52 @@
 # Tarjetitas
 
-PWA estatica para generar e imprimir tarjetas de almuerzo.
+Base de trabajo para un sistema de almuerzos escolares con tres piezas:
 
-## Uso local
+- `index.html`: PWA actual para generar e imprimir tarjetas fisicas.
+- `docs/`: arquitectura, modelo de datos y API del sistema digital.
+- `prototipos/`: dos apps principales (`alumno` y `buffet`) mas un panel interno de administracion.
 
-Abrir `index.html` en el navegador.
+## Estado actual
+
+La PWA de impresion sigue disponible en la raiz del proyecto y se publica en GitHub Pages.
+
+## Estructura
+
+- `index.html`: generador de tarjetas imprimibles.
+- `tarjetas-almuerzo.html`: copia del flujo de impresion.
+- `manifest.webmanifest`: manifest de la PWA actual.
+- `assets/`: branding e iconos.
+- `docs/arquitectura-sistema.md`: arquitectura funcional y tecnica.
+- `docs/modelo-datos.sql`: esquema base relacional.
+- `docs/api-openapi.yaml`: contrato inicial de API.
+- `prototipos/alumno.html`: app del alumno.
+- `prototipos/buffet.html`: app del buffet para validar entregas.
+- `prototipos/admin.html`: panel interno de administracion.
+
+## Sistema propuesto
+
+El sistema digital se apoya en un backend central para evitar fraude o uso indefinido:
+
+- el alumno muestra una credencial digital
+- el buffet escanea o valida desde su propia app
+- el backend decide si corresponde entregar el almuerzo
+- cada consumo queda registrado y no puede repetirse
+
+## Reglas clave
+
+- la app del alumno no es fuente de verdad
+- la validacion real ocurre en el backend
+- la entrega diaria se limita a una por alumno
+- el QR o token debe ser dinamico y firmado
+- todo evento importante deja auditoria
+
+## Proximos pasos tecnicos
+
+1. Implementar backend y base de datos a partir de `docs/modelo-datos.sql`.
+2. Construir API siguiendo `docs/api-openapi.yaml`.
+3. Convertir `prototipos/alumno.html` y `prototipos/buffet.html` en las apps reales.
+4. Integrar autenticacion, scanner y emision de credenciales dinamicas.
 
 ## Publicacion
 
-GitHub Pages sirve la app directamente desde `index.html`.
+GitHub Pages sirve la PWA actual desde `index.html`.

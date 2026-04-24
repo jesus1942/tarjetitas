@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tarjetitas · Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@400;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --salmon: #E89A8A;
+  --salmon-dark: #C75D4F;
+  --cream: #F5EBD9;
+  --brown: #5C3423;
+  --brown-light: #8B5844;
+  --bg: #E8D9BE;
+  --shadow: rgba(92, 52, 35, 0.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--brown);
+  font-family: 'Nunito', Arial, sans-serif;
+  padding: 24px 14px 34px;
+}
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.hero {
+  background: white;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 10px 24px var(--shadow);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Caveat', cursive;
+  color: var(--salmon-dark);
+  font-size: 2.5rem;
+}
+.hero p {
+  color: var(--brown-light);
+  margin-top: 4px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.card, .table-card {
+  background: white;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+.card b {
+  display: block;
+  color: var(--brown-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.72rem;
+}
+.card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--salmon-dark);
+}
+.table-card h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 1.9rem;
+  color: var(--salmon-dark);
+  margin-bottom: 10px;
+}
+.table {
+  display: grid;
+  gap: 8px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.9fr 0.7fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  background: #FEFAF2;
+  align-items: center;
+}
+.row.head {
+  background: transparent;
+  color: var(--brown-light);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  padding-top: 0;
+  padding-bottom: 4px;
+}
+.pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  width: fit-content;
+}
+.pill.ok {
+  background: #E8F5EC;
+  color: #2E7D4B;
+}
+.pill.pause {
+  background: #FFF0E3;
+  color: #B35A1B;
+}
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .row.head {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <h1>Panel de administracion</h1>
+      <p>Gestion de alumnos, permisos diarios, operadores y auditoria.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <b>Alumnos activos</b>
+        <span>482</span>
+      </article>
+      <article class="card">
+        <b>Entregas hoy</b>
+        <span>319</span>
+      </article>
+      <article class="card">
+        <b>Incidencias</b>
+        <span>7</span>
+      </article>
+    </section>
+
+    <section class="table-card">
+      <h2>Permisos y estado</h2>
+      <div class="table">
+        <div class="row head">
+          <div>Alumno</div>
+          <div>Curso</div>
+          <div>Permiso</div>
+          <div>Estado</div>
+        </div>
+        <div class="row">
+          <div><strong>Valentina Lopez</strong></div>
+          <div>5to B</div>
+          <div>Almuerzo regular</div>
+          <div><span class="pill ok">activo</span></div>
+        </div>
+        <div class="row">
+          <div><strong>Mateo Garcia</strong></div>
+          <div>4to A</div>
+          <div>Almuerzo regular</div>
+          <div><span class="pill pause">bloqueado</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

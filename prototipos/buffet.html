@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tarjetitas · Buffet</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@400;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --salmon: #E89A8A;
+  --salmon-dark: #C75D4F;
+  --cream: #F5EBD9;
+  --brown: #5C3423;
+  --brown-light: #8B5844;
+  --bg: #E8D9BE;
+  --ok: #2E7D4B;
+  --warn: #B35A1B;
+  --bad: #A33D3D;
+  --shadow: rgba(92, 52, 35, 0.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--brown);
+  font-family: 'Nunito', Arial, sans-serif;
+  padding: 20px 14px 30px;
+}
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.top, .scan, .history {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+.top {
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.top h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 2.1rem;
+  color: var(--salmon-dark);
+}
+.top p {
+  color: var(--brown-light);
+}
+.scan {
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.camera {
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(199,93,79,0.18), rgba(92,52,35,0.08)),
+    #FAF5EE;
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  border: 2px dashed rgba(92,52,35,0.24);
+  margin-bottom: 16px;
+}
+.frame {
+  width: 180px;
+  height: 180px;
+  border: 4px solid rgba(92,52,35,0.45);
+  border-radius: 26px;
+  position: relative;
+}
+.frame::before,
+.frame::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgba(92,52,35,0.35);
+  transform: translate(-50%, -50%);
+}
+.frame::before {
+  width: 128px;
+  height: 2px;
+}
+.frame::after {
+  width: 2px;
+  height: 128px;
+}
+.result {
+  background: #ECF7EF;
+  color: var(--ok);
+  border-radius: 20px;
+  padding: 14px 16px;
+}
+.result strong {
+  display: block;
+  font-size: 1.1rem;
+}
+.result span {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.history {
+  padding: 18px;
+}
+.history h2 {
+  font-family: 'Caveat', cursive;
+  color: var(--salmon-dark);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(92,52,35,0.18);
+}
+.row:last-child {
+  border-bottom: none;
+}
+.badge {
+  white-space: nowrap;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 10px;
+}
+.badge.ok {
+  background: #E8F5EC;
+  color: var(--ok);
+}
+.badge.warn {
+  background: #FFF0E3;
+  color: var(--warn);
+}
+</style>
+</head>
+<body>
+  <main class="app">
+    <section class="top">
+      <h1>App del buffet</h1>
+      <p>Escaneo rapido con respuesta grande y auditoria inmediata.</p>
+    </section>
+
+    <section class="scan">
+      <div class="camera">
+        <div class="frame" aria-label="Marco de escaneo"></div>
+      </div>
+      <div class="result">
+        <strong>APROBADO</strong>
+        <span>Valentina Lopez · 5to B · registrado a las 12:18 en Puesto 1.</span>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>Ultimos eventos</h2>
+      <div class="row">
+        <div>
+          <strong>Valentina Lopez</strong>
+          <div style="color:var(--brown-light);">12:18 · Puesto 1</div>
+        </div>
+        <span class="badge ok">aprobado</span>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Mateo Garcia</strong>
+          <div style="color:var(--brown-light);">12:16 · Puesto 1</div>
+        </div>
+        <span class="badge warn">ya retirado</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tarjetitas · Alumno</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@400;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --salmon: #E89A8A;
+  --salmon-dark: #C75D4F;
+  --salmon-deep: #A84A3F;
+  --cream: #F5EBD9;
+  --brown: #5C3423;
+  --brown-light: #8B5844;
+  --bg: #E8D9BE;
+  --ink: #2F4359;
+  --shadow: rgba(92, 52, 35, 0.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.25) 0%, transparent 28%),
+    radial-gradient(circle at bottom right, rgba(168,74,63,0.12) 0%, transparent 36%),
+    var(--bg);
+  color: var(--brown);
+  font-family: 'Nunito', Arial, sans-serif;
+  padding: 24px 14px 40px;
+}
+.app {
+  max-width: 440px;
+  margin: 0 auto;
+}
+.hero, .panel, .qr-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+.hero {
+  padding: 22px 20px;
+  margin-bottom: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.brand h1 {
+  font-family: 'Caveat', cursive;
+  color: var(--salmon-dark);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.brand p {
+  color: var(--brown-light);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+.panel {
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+.meta-box {
+  background: #FEFAF2;
+  border-radius: 16px;
+  padding: 12px;
+}
+.meta-box b {
+  display: block;
+  color: var(--salmon-dark);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.meta-box span {
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E9F6EB;
+  color: #23623A;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.qr-card {
+  padding: 20px;
+  background: linear-gradient(180deg, white 0%, #FFF9F4 100%);
+}
+.qr-box {
+  aspect-ratio: 1 / 1;
+  max-width: 280px;
+  margin: 16px auto 12px;
+  border-radius: 20px;
+  background:
+    linear-gradient(90deg, #111 8%, transparent 8%, transparent 13%, #111 13%, #111 18%, transparent 18%, transparent 24%, #111 24%, #111 31%, transparent 31%, transparent 37%, #111 37%, #111 43%, transparent 43%, transparent 49%, #111 49%, #111 54%, transparent 54%, transparent 60%, #111 60%, #111 66%, transparent 66%, transparent 72%, #111 72%, #111 78%, transparent 78%, transparent 84%, #111 84%),
+    linear-gradient(#111 8%, transparent 8%, transparent 13%, #111 13%, #111 18%, transparent 18%, transparent 24%, #111 24%, #111 31%, transparent 31%, transparent 37%, #111 37%, #111 43%, transparent 43%, transparent 49%, #111 49%, #111 54%, transparent 54%, transparent 60%, #111 60%, #111 66%, transparent 66%, transparent 72%, #111 72%, #111 78%, transparent 78%, transparent 84%, #111 84%);
+  background-size: 100% 100%;
+  background-color: white;
+  border: 14px solid white;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 10px 18px rgba(92,52,35,0.1);
+}
+.qr-card h2 {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.9rem;
+  color: var(--salmon-dark);
+}
+.qr-card p {
+  text-align: center;
+  color: var(--brown-light);
+  line-height: 1.5;
+}
+.footer-note {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--brown-light);
+}
+</style>
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="brand">
+        <img src="../assets/buho_sabores_icon.png" alt="Sabores de Ena">
+        <div>
+          <h1>Mi Almuerzo</h1>
+          <p>Credencial digital del alumno</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="meta-box">
+          <b>Alumno</b>
+          <span>Valentina Lopez</span>
+        </div>
+        <div class="meta-box">
+          <b>Curso</b>
+          <span>5to B</span>
+        </div>
+        <div class="meta-box">
+          <b>Estado</b>
+          <span class="status">Habilitado hoy</span>
+        </div>
+        <div class="meta-box">
+          <b>Servicio</b>
+          <span>Almuerzo escolar</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <strong>Idea operativa</strong>
+      <p style="margin-top:8px; color:var(--brown-light); line-height:1.55;">La app muestra una credencial temporal. El operador la escanea y el backend decide si corresponde entregar o no.</p>
+    </section>
+
+    <section class="qr-card">
+      <h2>Listo para escanear</h2>
+      <div class="qr-box" aria-label="QR dinamico del alumno"></div>
+      <p>Codigo temporal valido por 45 segundos.</p>
+      <div class="footer-note">Si ya retiraste hoy, esta pantalla debe cambiar a “ya registrado”.</div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Tarjetitas Meals API
+  version: 0.1.0
+  description: API inicial para credenciales dinamicas y validacion de almuerzos.
+servers:
+  - url: https://api.example.com
+tags:
+  - name: Auth
+  - name: Students
+  - name: Credentials
+  - name: Redemptions
+  - name: Admin
+paths:
+  /auth/student/login:
+    post:
+      tags: [Auth]
+      summary: Inicia sesion del alumno
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier, password]
+              properties:
+                identifier:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Sesion creada
+  /auth/operator/login:
+    post:
+      tags: [Auth]
+      summary: Inicia sesion del operador
+      responses:
+        '200':
+          description: Sesion creada
+  /students/me:
+    get:
+      tags: [Students]
+      summary: Devuelve perfil del alumno autenticado
+      responses:
+        '200':
+          description: Perfil del alumno
+  /students/me/credential:
+    get:
+      tags: [Credentials]
+      summary: Emite credencial dinamica del alumno
+      responses:
+        '200':
+          description: Credencial valida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  credential_id:
+                    type: string
+                    format: uuid
+                  qr_payload:
+                    type: string
+                  expires_at:
+                    type: string
+                    format: date-time
+                  service_date:
+                    type: string
+                    format: date
+                  meal_service:
+                    type: string
+  /redemptions/validate:
+    post:
+      tags: [Redemptions]
+      summary: Valida o consume una credencial desde la app del buffet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [qr_payload, station_id]
+              properties:
+                qr_payload:
+                  type: string
+                station_id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Resultado de la validacion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [approved, already_redeemed, not_allowed, expired, requires_review]
+                  student:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        format: uuid
+                      full_name:
+                        type: string
+                  message:
+                    type: string
+  /admin/students:
+    get:
+      tags: [Admin]
+      summary: Lista alumnos
+      responses:
+        '200':
+          description: Lista de alumnos
+    post:
+      tags: [Admin]
+      summary: Crea alumno
+      responses:
+        '201':
+          description: Alumno creado
+  /admin/entitlements:
+    post:
+      tags: [Admin]
+      summary: Crea o actualiza permiso de almuerzo
+      responses:
+        '200':
+          description: Permiso actualizado
+  /admin/reports/daily:
+    get:
+      tags: [Admin]
+      summary: Reporte diario de entregas
+      parameters:
+        - in: query
+          name: service_date
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Reporte diario
