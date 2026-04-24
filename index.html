@@ -219,44 +219,46 @@ body {
   margin: 0 auto 20px;
   padding: 8mm 12mm;
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6mm 5mm;
+  align-content: start;
   page-break-after: always;
 }
 .hoja:last-child { page-break-after: auto; }
 
 .tarjeta {
-  width: 186mm;
-  height: 88mm;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1.94 / 1;
   background: var(--salmon);
   background-image:
     radial-gradient(circle at 15% 25%, rgba(255,255,255,0.18) 0%, transparent 45%),
     radial-gradient(circle at 85% 80%, rgba(168,74,63,0.22) 0%, transparent 55%);
-  border-radius: 5mm;
-  padding: 5mm 7mm;
+  border-radius: 4mm;
+  padding: 3.2mm 4mm;
   position: relative;
   overflow: hidden;
   page-break-inside: avoid;
   break-inside: avoid;
   outline: 1px dashed rgba(92, 52, 35, 0.3);
-  outline-offset: 1.5mm;
+  outline-offset: 1mm;
 }
 
 .tarjeta-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2.5mm;
-  gap: 4mm;
+  margin-bottom: 1.8mm;
+  gap: 2.5mm;
 }
 
 .titulo-caps {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   color: var(--cream);
-  font-size: 8.5pt;
-  letter-spacing: 1.8px;
+  font-size: 6.2pt;
+  letter-spacing: 1.2px;
   line-height: 1.25;
   text-transform: uppercase;
 }
@@ -264,17 +266,17 @@ body {
 .titulo-script {
   font-family: 'Caveat', cursive;
   color: var(--salmon-deep);
-  font-size: 21pt;
+  font-size: 15pt;
   font-weight: 700;
   line-height: 1;
-  margin-top: 1mm;
+  margin-top: 0.5mm;
   transform: rotate(-2.5deg);
   display: inline-block;
 }
 
 .ilustracion {
-  width: 17mm;
-  height: 17mm;
+  width: 12.5mm;
+  height: 12.5mm;
   flex-shrink: 0;
   border-radius: 50%;
   background: rgba(245, 235, 217, 0.78);
@@ -294,17 +296,17 @@ body {
 
 .linea-alumno {
   background: rgba(245, 235, 217, 0.5);
-  border-radius: 3mm;
-  padding: 1.5mm 4mm;
-  margin-bottom: 2.5mm;
+  border-radius: 2.4mm;
+  padding: 1.1mm 2.6mm;
+  margin-bottom: 1.8mm;
   display: flex;
   align-items: center;
-  gap: 3mm;
+  gap: 2mm;
 }
 .linea-label {
   font-family: 'Caveat', cursive;
   color: var(--salmon-deep);
-  font-size: 13pt;
+  font-size: 9.5pt;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -312,23 +314,23 @@ body {
   flex: 1;
   font-family: 'Kalam', cursive;
   color: var(--brown);
-  font-size: 10.5pt;
+  font-size: 7.6pt;
   border-bottom: 1.5px dashed rgba(92, 52, 35, 0.45);
-  padding: 1mm 0;
-  min-height: 5mm;
+  padding: 0.4mm 0;
+  min-height: 3mm;
 }
 
 .circulos-label {
   font-family: 'Caveat', cursive;
   color: var(--cream);
-  font-size: 12pt;
+  font-size: 9.5pt;
   font-weight: 700;
-  margin-bottom: 1.5mm;
+  margin-bottom: 1mm;
 }
 .circulos-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 1.8mm;
+  gap: 1.1mm;
 }
 .circulo {
   aspect-ratio: 1 / 1;
@@ -343,7 +345,7 @@ body {
   user-select: none;
   font-family: 'Nunito', sans-serif;
   color: rgba(92, 52, 35, 0.3);
-  font-size: 6.5pt;
+  font-size: 4.6pt;
   font-weight: 800;
   position: relative;
 }
@@ -358,7 +360,7 @@ body {
   position: absolute;
   color: var(--cream);
   font-weight: 800;
-  font-size: 8.5pt;
+  font-size: 6.4pt;
   line-height: 1;
 }
 
@@ -389,7 +391,10 @@ body {
     min-height: auto;
     padding: 3mm;
   }
-  .tarjeta { width: 100%; }
+  .tarjeta {
+    width: 100%;
+    min-height: 0;
+  }
   .stats { grid-template-columns: 1fr 1fr 1fr; }
   .stat-num { font-size: 1.6rem; }
   .header h1 { font-size: 2.2rem; }
@@ -403,7 +408,7 @@ body {
 
   <div class="header">
     <h1>Tarjetas de Almuerzo</h1>
-    <p>Generá tarjetas imprimibles · 3 por hoja A4 · Datos guardados localmente</p>
+    <p>Generá tarjetas imprimibles · 6 por hoja A4 · Datos guardados localmente</p>
   </div>
 
   <div id="installBanner" class="install-banner">
@@ -431,7 +436,7 @@ body {
 
   <div class="panel">
     <h2>1. Cargá los alumnos</h2>
-    <p>Escribí o pegá la lista, <b>un nombre por línea</b>. Se genera una tarjeta por cada uno, <b>3 por hoja A4</b>.</p>
+    <p>Escribí o pegá la lista, <b>un nombre por línea</b>. Se genera una tarjeta por cada uno, <b>6 por hoja A4</b>.</p>
     <textarea id="listaAlumnos" placeholder="Juan Pérez&#10;María González&#10;Pedro Rodríguez&#10;..." oninput="guardarLista()"></textarea>
 
     <div class="controles">
@@ -470,7 +475,7 @@ body {
 <script>
 /* ========== CONFIG ========== */
 const CIRCULOS_POR_TARJETA = 20;
-const TARJETAS_POR_HOJA    = 3;
+const TARJETAS_POR_HOJA    = 6;
 const STORAGE_KEY_LISTA    = 'tarjetas_lista_alumnos';
 const STORAGE_KEY_MARCAS   = 'tarjetas_marcas';
 
