@@ -401,8 +401,32 @@ body {
     min-height: 297mm;
     margin: 0;
     padding: 8mm 12mm;
+    display: grid;
+    background: white;
     box-shadow: none;
     page-break-after: always;
+  }
+  .hoja.hasta-3 {
+    grid-template-columns: 1fr;
+    gap: 4mm;
+  }
+  .hoja:not(.hasta-3) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5mm 5mm;
+  }
+  .tarjeta {
+    width: 100% !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline-offset: 1mm !important;
+  }
+  .hoja.hasta-3 .tarjeta {
+    height: 87mm;
+  }
+  .hoja:not(.hasta-3) .tarjeta {
+    height: 43mm;
   }
   .circulo { color: transparent !important; }
   * {
@@ -446,10 +470,12 @@ body {
     box-shadow: 0 10px 24px rgba(92, 52, 35, 0.14);
   }
   .tarjeta:nth-child(odd) {
-    transform: rotate(-1.2deg);
+    transform: none;
+    margin-right: 8px;
   }
   .tarjeta:nth-child(even) {
-    transform: rotate(0.9deg);
+    transform: none;
+    margin-left: 8px;
   }
   .tarjeta-top {
     margin-bottom: 10px;
