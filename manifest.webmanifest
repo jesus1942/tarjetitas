@@ -1,0 +1,21 @@
+{
+  "name": "Tarjetas de Almuerzo",
+  "short_name": "Almuerzos",
+  "description": "Gestion de tarjetas de almuerzo para alumnos.",
+  "start_url": ".",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#E8D9BE",
+  "theme_color": "#E89A8A",
+  "lang": "es-AR",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/buho_sabores_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
