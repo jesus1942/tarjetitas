@@ -403,7 +403,7 @@ body {
 
   <div id="installBanner" class="install-banner">
     <div class="install-banner-text">
-      <b>📲 Instalá la app</b>
+      <b>Instalá la app</b>
       <span>Usala offline como una aplicación</span>
     </div>
     <button onclick="instalarApp()">Instalar</button>
@@ -430,10 +430,10 @@ body {
     <textarea id="listaAlumnos" placeholder="Juan Pérez&#10;María González&#10;Pedro Rodríguez&#10;..." oninput="guardarLista()"></textarea>
 
     <div class="controles">
-      <button class="btn btn-primary" onclick="generarTarjetas()">✨ Generar tarjetas</button>
+      <button class="btn btn-primary" onclick="generarTarjetas()">Generar tarjetas</button>
       <button class="btn btn-ghost" onclick="cargarEjemplo()">Cargar ejemplo</button>
-      <button class="btn btn-ghost" onclick="window.print()">🖨 Imprimir</button>
-      <button class="btn btn-danger" onclick="borrarTodo()">🗑 Borrar todo</button>
+      <button class="btn btn-ghost" onclick="window.print()">Imprimir</button>
+      <button class="btn btn-danger" onclick="borrarTodo()">Borrar todo</button>
     </div>
 
     <div class="info-impresion">
@@ -527,7 +527,7 @@ function htmlTarjeta(nombreAlumno, marcasDelAlumno = []) {
         <span class="linea-label">Alumno:</span>
         <span class="linea-nombre">${texto}</span>
       </div>
-      <div class="circulos-label">Marcá cada almuerzo ↩</div>
+      <div class="circulos-label">Marcá cada almuerzo</div>
       <div class="circulos-grid">${circulos}</div>
     </div>
   `;
