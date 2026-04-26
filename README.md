@@ -17,8 +17,12 @@ La PWA de impresion sigue disponible en la raiz del proyecto y se publica en Git
 - `manifest.webmanifest`: manifest de la PWA actual.
 - `assets/`: branding e iconos.
 - `docs/arquitectura-sistema.md`: arquitectura funcional y tecnica.
+- `docs/alcance-funcional.md`: alcance, casos de uso y limites del MVP.
+- `docs/flujos-operativos.md`: operacion diaria y escenarios de excepcion.
 - `docs/modelo-datos.sql`: esquema base relacional.
 - `docs/api-openapi.yaml`: contrato inicial de API.
+- `docs/roadmap.md`: etapas sugeridas de implementacion.
+- `docs/decisiones-tecnicas.md`: decisiones base del sistema.
 - `prototipos/alumno.html`: app del alumno.
 - `prototipos/buffet.html`: app del buffet para validar entregas.
 - `prototipos/admin.html`: panel interno de administracion.
