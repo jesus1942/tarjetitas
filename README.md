@@ -3,6 +3,7 @@
 Base de trabajo para un sistema de almuerzos escolares con tres piezas:
 
 - `index.html`: PWA actual para generar e imprimir tarjetas fisicas.
+- `curso-tarjetitas.html`: landing viva del curso con el desarrollo paso a paso.
 - `docs/`: arquitectura, modelo de datos y API del sistema digital.
 - `prototipos/`: dos apps principales (`alumno` y `buffet`) mas un panel interno de administracion.
 
@@ -10,9 +11,12 @@ Base de trabajo para un sistema de almuerzos escolares con tres piezas:
 
 La PWA de impresion sigue disponible en la raiz del proyecto y se publica en GitHub Pages.
 
+Tambien hay una landing de curso en `curso-tarjetitas.html` para seguir el proyecto como material didactico y hoja de ruta viva.
+
 ## Estructura
 
 - `index.html`: generador de tarjetas imprimibles.
+- `curso-tarjetitas.html`: landing del curso y documentacion viva.
 - `tarjetas-almuerzo.html`: copia del flujo de impresion.
 - `manifest.webmanifest`: manifest de la PWA actual.
 - `assets/`: branding e iconos.

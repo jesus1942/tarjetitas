@@ -75,6 +75,28 @@ body {
   line-height: 1.5;
 }
 
+.panel-link {
+  background: linear-gradient(135deg, #fff8ef, #fdf0e0);
+  border: 2px solid rgba(232, 154, 138, 0.45);
+}
+
+.panel-link p {
+  margin-bottom: 12px;
+}
+
+.panel-link-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.panel-link-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .panel textarea {
   width: 100%;
   min-height: 140px;
@@ -528,6 +550,14 @@ body {
   <div class="header">
     <h1>Tarjetas de Almuerzo</h1>
     <p>Generá tarjetas imprimibles · 6 por hoja A4 · Datos guardados localmente</p>
+  </div>
+
+  <div class="panel panel-link">
+    <h2>Curso y documentacion viva</h2>
+    <p>Además del generador de impresión, el proyecto ahora tiene una landing que explica el desarrollo paso a paso, la arquitectura, el roadmap y la evolución futura hacia el sistema digital completo.</p>
+    <div class="panel-link-actions">
+      <a class="btn btn-primary" href="curso-tarjetitas.html">Abrir landing del curso</a>
+    </div>
   </div>
 
   <div id="installBanner" class="install-banner">
